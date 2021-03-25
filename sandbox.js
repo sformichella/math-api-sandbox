@@ -6,7 +6,7 @@ const Matrix = require('./Matrix');
 // Integers
 const seven = new Integer(12323);
 const negativeTwo = new Integer(-2332);
-const integerSum = new Addition(seven, negativeTwo).sum();
+const integerSum = new Addition(seven, negativeTwo).getResult();
 
 console.log('Integer Sum', integerSum.getExpression());
 
@@ -27,7 +27,7 @@ const coeffTwo = {
 
 const polyOne = new Polynomial(coeffOne);
 const polyTwo = new Polynomial(coeffTwo);
-const polySum = new Addition(polyOne, polyTwo).sum();
+const polySum = new Addition(polyOne, polyTwo).getResult();
 
 console.log('Polynomial Sum', polySum.getExpression());
 
@@ -48,7 +48,7 @@ const matrixTwoEntries = {
 
 const matrixOne = new Matrix(matrixOneEntries);
 const matrixTwo = new Matrix(matrixTwoEntries);
-const matrixSum = new Addition(matrixOne, matrixTwo).sum();
+const matrixSum = new Addition(matrixOne, matrixTwo).get();
 
 console.log('Matrix One', matrixOne.getExpression());
 console.log('Matrix Two', matrixTwo.getExpression());

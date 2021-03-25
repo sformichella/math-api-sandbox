@@ -7,13 +7,13 @@ class Addition {
     this.operandTwo = operandTwo;
   }
 
-  sum() {
+  getResult() {
     // Merge like pieces into a single array
-    const combinedPieces = Addition.getLikePieces(this.operandOne, this.operandTwo);
+    const combinedPieces = Addition.getPieces(this.operandOne, this.operandTwo);
     const type = this.operandOne.constructor;
     const sum = {};
 
-    // combinedPieces is a Map, iterate and reduce each array
+    // combinedPieces is a Map, iterate and reduce each array to one number
     combinedPieces.forEach((value, key) => {
       const pieceSum = value.reduce((agg, curr) => agg + curr);
       sum[key] = pieceSum;
@@ -23,7 +23,7 @@ class Addition {
     return type.getFromOperation(sum);
   }
 
-  static getLikePieces(operandOne, operandTwo) {
+  static getPieces(operandOne, operandTwo) {
     const piecesOne = operandOne.getPieces();
     const piecesTwo = operandTwo.getPieces();
 
